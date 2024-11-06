@@ -31,25 +31,25 @@ This project is ideal for learning about shift registers, basic timing circuits,
 
 ## Circuit Diagram
 
-**Note:** [The circuit diagram (PDF)](https://github.com/thynavy/LED_Control_Project_Using_74HC595/blob/main/Schematic.pdf) This circuit shows the 555 timer in astable mode, generating clock pulses for the 74HC595 shift register, which sequentially lights up LEDs connected to its output pins.
+**Note:** [_The circuit diagram (PDF)_](https://github.com/thynavy/LED_Control_Project_Using_74HC595/blob/main/Schematic.pdf) This circuit shows the 555 timer in astable mode, generating clock pulses for the 74HC595 shift register, which sequentially lights up LEDs connected to its output pins.
 
 ## How It Works
 
 1. Clock Pulse Generation with 555 Timer:
     - The 555 timer is configured in astable mode to produce a continuous clock signal. Adjusting resistor and capacitor values (or using a potentiometer) can vary the pulse frequency, changing the speed of the LED sequence.
 2. Shift Register Operation with 74HC595:
-    - The 74HC595 shift register takes the data input on its SER (Serial Data) pin, shifts the data with each clock pulse, and outputs it across Q0 to Q7 pins.
+    - The 74HC595 shift register takes the data input on its SER (Serial Data) pin, shifts the data with each clock pulse, and outputs it across QA to QD pins.
     - The SRCLK (Shift Register Clock) pin is connected to the 555 timer’s output, which shifts the bits through the register on each pulse.
     - The RCLK (Register Clock/Latch) pin updates the output pins, showing the new data pattern on the LEDs.
 3. LED Control:
-    - LEDs connected to Q0 to Q7 of the 74HC595 display a pattern depending on the data shifted through the register.
+    - LEDs connected to QA to QD of the 74HC595 display a pattern depending on the data shifted through the register.
     - Using specific binary data sequences, you can create various LED effects, like a “chase” effect, where each LED lights up in sequence.
 
 ## Setup and Usage
 
 1. Circuit Assembly:
     - Place the 74HC595 shift register and 555 timer ICs on a board.
-    - Connect the LEDs to the output pins (Q0 to Q7) of the 74HC595, with current-limiting resistors in series to protect the LEDs.
+    - Connect the LEDs to the output pins (QA to QD) of the 74HC595, with current-limiting resistors in series to protect the LEDs.
 2. Data Loading:
     - Use a microcontroller or manually toggle the data line to the 74HC595’s SER pin to control the bit pattern. This can also be automated with additional 555 or logic circuitry.
 3. Power Up and Adjust:
